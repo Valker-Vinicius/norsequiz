@@ -31,7 +31,7 @@ export default function Home() {
 			<QuizContainer>
 				<Widget>
 					<Widget.Header>
-						<h1>The Legend of Zelda</h1>
+						<h1>Norse Mythology Quiz</h1>
 					</Widget.Header>
 					<Widget.Content>
 						<p>
@@ -50,7 +50,7 @@ export default function Home() {
 				</Widget>
 				<Footer />
 			</QuizContainer>
-			<GitHubCorner projectUrl="https://github.com/valker-vinicius"/>
+			<GitHubCorner projectUrl="https://github.com/valker-vinicius/norsequiz"/>
 		</QuizBackground>
 	)
 }
