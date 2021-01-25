@@ -35,7 +35,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
 		<Head>
-			<meta property="og:image" content={db.bg}/>
+			<meta prefix="og: http://ogp.me/ns#" property="og:image" content={db.bg}/>
 		</Head>
       <ThemeProvider theme={theme}>
       	<GlobalStyle />
