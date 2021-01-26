@@ -28,12 +28,11 @@ export const QuizContainer = styled.div`
 
 export default function Home() {
 	return (
-		<div>
+		<>
 			<Head>
-				<meta property="og:image" content={db.bg}/>
-				<meta property="og:image:type" content="image/jpg"/>
+				<meta property="og:title" content="Norse Quiz"/>
+				<meta property="og:image" content={db.metaImg}/>
 			</Head>
-
 			<QuizBackground backgroundImage={db.bg}>
 				<QuizContainer>
 					<Widget>
@@ -42,14 +41,14 @@ export default function Home() {
 						</Widget.Header>
 						<Widget.Content>
 							<p>
-								loren ipsum dolor
-						</p>
+								Make sure that you are ready for the Valhalla!
+							</p>
 						</Widget.Content>
 					</Widget>
 					<Widget>
 						<Widget.Content>
 
-							<h1>Quizzes da galera</h1>
+							<h1>Other awesome quizzes!</h1>
 							<p>
 								loren ipsum dolor
 						</p>
@@ -59,6 +58,6 @@ export default function Home() {
 				</QuizContainer>
 				<GitHubCorner projectUrl="https://github.com/valker-vinicius/norsequiz" />
 			</QuizBackground>
-		</div>
+		</>
 	)
 }
