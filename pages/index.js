@@ -32,6 +32,7 @@ export default function Home() {
 			<Head>
 				<meta property="og:title" content="Norse Quiz"/>
 				<meta property="og:image" content={db.metaImg}/>
+				<meta property="og:description" content="Come make sure that you are ready for the Valhalla!"/>
 			</Head>
 			<QuizBackground backgroundImage={db.bg}>
 				<QuizContainer>
