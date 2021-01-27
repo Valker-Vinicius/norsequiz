@@ -20,6 +20,29 @@ export const QuizContainer = styled.div`
   }
 `;
 
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Input = styled.input`
+  border-radius: 4px;
+  padding: 7px 4px;
+  background-color: ${db.theme.colors.fieldBg};
+  color: snow;
+  border-color: #424242;
+  border-style: solid;
+`;
+
+export const Button = styled.button`
+  color: white;
+  background-color: #2196f3;
+  border-color: #155fa0;
+  border-radius: 4px;
+  padding: 7px 4px;
+  margin-top: 8px;
+`;
+
 export default function Home() {
   const router = useRouter();
   const [name, setName] = React.useState('');
@@ -44,25 +67,22 @@ export default function Home() {
               <p>
                 Make sure that you are ready for the Valhalla!
               </p>
-              <form onSubmit={function (event) {
+              <Form onSubmit={function (event) {
                 event.preventDefault();
                 router.push(`/quiz?name=${name}`);
               }}
               >
-                <input
+                <Input
                   onChange={function (event) {
                     setName(event.target.value);
                   }}
                   placeholder="Tell me your name"
                   required
                 />
-                <button type="submit" disabled={name.length === 0}>
-                  Are you ready
-                  {' '}
-                  {name}
-                  ?
-                </button>
-              </form>
+                <Button type="submit" disabled={name.length === 0}>
+                  Play
+                </Button>
+              </Form>
             </Widget.Content>
           </Widget>
           <Widget>
