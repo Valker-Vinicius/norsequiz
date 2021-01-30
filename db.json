@@ -2,33 +2,81 @@
 	"bg": "https://cdn.shopify.com/s/files/1/1879/3511/articles/canva-photo-editor_-_2019-05-31T164022.871_1024x1024.png?v=1559296042",
 	"metaImg": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Runic_letter_thurisaz.png",
 	"title": "Quiz mitologia nórdica da Alura",
-	"description": "Teste os seus conhecimentos sobre mitologia nórdica e vamos ver quantos layouts você vai deixar de quebrar",
+	"description": "Teste os seus conhecimentos sobre mitologia nórdica",
 	"questions": [
 	  {
 		"image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-		"title": "Como fazer um seletor por id via CSS?",
-		"description": "Essa é pra aquecer",
+		"title": "Quem é o mais sábio do clã Aesir?",
+		"description": "Vejamos se é capaz de avançar",
 		"answer": 2,
 		"alternatives": [
-		  ".elemento",
-		  "*elemento",
-		  "#elemento",
-		  "%elemento"
+		  "Kvasir",
+		  "Thor",
+		  "Odin",
+		  "Loki"
 		]
 	  },
 	  {
 		"image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-		"title": "Como fazer um background gradiente com css?",
-		"description": "Faz tempo em haha",
+		"title": "Quem foi o responsável pela criação dos tesouros dos deuses?",
+		"description": "Pensou que pegaria leve, hã? Dessa você não escapa",
 		"answer": 0,
 		"alternatives": [
-		   "background: linear-gradient(#e66465, #9198e5);",
-		   "background: gradient(#e66465, #9198e5);"
+		   "Loki",
+		   "Odin",
+		   "Frey",
+		   "Ymir"
+		]
+	  },
+	  {
+		"image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+		"title": "Quantos tesouros foram presenteados aos deuses no desafio proposto por Loki?",
+		"description": "Guerreiros também precisam de matemática.",
+		"answer": 3,
+		"alternatives": [
+		   "9",
+		   "3",
+		   "1",
+		   "6"
+		]
+	  },
+	  {
+		"image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+		"title": "Qual o nome da grande vaca responsável por alimentar Ymir no princípio da existência?",
+		"description": "Memória afiada? Haha! Essa eu quero ver!",
+		"answer": 2,
+		"alternatives": [
+		   "Munin",
+		   "Huldra",
+		   "Audhumulla",
+		   "Vili"
+		]
+	  },
+	  {
+		"image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+		"title": "Qual o nome do návio que Loki usará no Ragnarök?",
+		"description": "",
+		"answer": 0,
+		"alternatives": [
+		   "Nagflar",
+		   "Skidblanir"
+		]
+	  },
+	  {
+		"image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+		"title": "Quantos corvos tem Odin e quais seus nomes?",
+		"description": "Terminemos provando sua lealdade ao Pai de Todos",
+		"answer": 0,
+		"alternatives": [
+		   "Dois. Hugin e Munin",
+		   "Dois. Rosnador e Rangedor",
+		   "Três. Verdandi, Urd e Skuld",
+		   "Três. Fenrir, Hella e Jormundgard"
 		]
 	  }
 	],
 	"external": [
-	  "https://aluraquiz-base.emichelsx.vercel.app/",
+	  "https://lotr-quiz.filipe1309.vercel.app/",
 	  "https://brunoquiz.brunosaibert.vercel.app/",
 	  "https://quiz-justiceleague.levi-magny.vercel.app/"
 	],
