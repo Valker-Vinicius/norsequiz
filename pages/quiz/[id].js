@@ -10,9 +10,6 @@ export default function AwesomeQuizzesPage({ externDb }) {
         externalBg={externDb.bg}
       />
     </ThemeProvider>
-  // {/*<pre style={{ color: 'black' }}>
-  // { JSON.stringify(externDb.questions, null, 4) }
-  // </pre>*/}
   );
 }
 
@@ -28,9 +25,6 @@ export async function getServerSideProps(context) {
 		   throw new Error('Failure to get data');
       })
       .then((responseConvertedToObject) => responseConvertedToObject);
-
-	  // console.log('Infos that Next give us', context.query.id);
-	  // console.log('db externo', externDb);
 
 	  return {
       props: {
