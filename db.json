@@ -28,7 +28,9 @@
 	  }
 	],
 	"external": [
-	  ""
+	  "https://aluraquiz-base.emichelsx.vercel.app/",
+	  "https://brunoquiz.brunosaibert.vercel.app/",
+	  "https://quiz-justiceleague.levi-magny.vercel.app/"
 	],
 	"theme": {
 	  "colors": {

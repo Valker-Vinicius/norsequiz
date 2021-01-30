@@ -2,13 +2,13 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 import styled from 'styled-components';
-import db from '../db.json';
-import Widget from '../src/components/Widget';
-import AlternativesForm from '../src/components/AlternativesForm';
-import QuizBackground from '../src/components/QuizBackground';
-import QuizContainer from '../src/components/QuizContainer';
-import QuizLogo from '../src/components/QuizLogo';
-import Button from '../src/components/Button';
+import Widget from '../../components/Widget';
+import AlternativesForm from '../../components/AlternativesForm';
+import QuizBackground from '../../components/QuizBackground';
+import QuizContainer from '../../components/QuizContainer';
+import QuizLogo from '../../components/QuizLogo';
+import Button from '../../components/Button';
+import BackLinkArrow from '../../components/BackLinkArrow';
 
 function ResultWidget({ results }) {
   return (
@@ -64,6 +64,7 @@ function QuestionWidget({
       <QuizLogo />
       <Widget>
         <Widget.Header>
+		  <BackLinkArrow href="/" />
           <h3>
             {`Question ${questionIndex + 1} of ${totalQuestions}`}
           </h3>
@@ -157,12 +158,13 @@ const screenStates = {
   LOADING: 'LOADING',
   RESULT: 'RESULT',
 };
-export default function QuizPage() {
+export default function QuizPage({ externalQuestions, externalBg }) {
   const [screenState, setScreenState] = React.useState(screenStates.LOADING);
   const [results, setResults] = React.useState([]);
-  const totalQuestions = db.questions.length;
+  const totalQuestions = externalQuestions.length;
   const [questionIndex, setQuestionIndex] = React.useState(0);
-  const question = db.questions[questionIndex];
+  const question = externalQuestions[questionIndex];
+  const bg = externalBg;
 
   function addResult(result) {
 	  setResults([
@@ -187,7 +189,7 @@ export default function QuizPage() {
   }
 
   return (
-    <QuizBackground backgroundImage={db.bg}>
+    <QuizBackground backgroundImage={bg}>
       <QuizContainer>
         {screenState === screenStates.QUIZ && (
         <QuestionWidget
