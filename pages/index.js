@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
       <Head>
-        <title>Norse Quiz</title>
+        <title>Quiz nórdico</title>
         <link rel="shortcut icon" href="https://image.flaticon.com/icons/png/512/1377/1377698.png" />
         <meta property="og:title" content="Norse Quiz" />
         <meta property="og:image" content={db.metaImg} />
@@ -45,11 +45,11 @@ export default function Home() {
           animate="show"
         >
           <Widget.Header>
-            <h1>Norse Mythology Quiz</h1>
+            <h1>Quiz de mitologia nórdica</h1>
           </Widget.Header>
           <Widget.Content>
             <p>
-              Make sure that you are ready for the Valhalla!
+              Vejamos se você está pronto para o Valhalla
             </p>
             <Form onSubmit={(event) => {
               event.preventDefault();
@@ -59,12 +59,15 @@ export default function Home() {
               <Input
                 name="user name"
                 onChange={(event) => { setName(event.target.value); }}
-                placeholder="Tell me your name"
+                placeholder="Me diga seu nome"
                 value={name}
+                autoComplete="off"
                 required
               />
               <Button type="submit" disabled={name.length === 0}>
-                Play
+                Serei o einhiejar
+                {' '}
+                {name}
               </Button>
             </Form>
           </Widget.Content>
@@ -80,7 +83,7 @@ export default function Home() {
           animate="show"
         >
           <Widget.Content>
-            <h1>Other awesome quizzes!</h1>
+            <h1>Outros quizzes desafiadores</h1>
             <ul>
               {db.external.map((externalLink) => {
                 const [projectName, githubUser] = externalLink
