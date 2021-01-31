@@ -12,28 +12,36 @@ import QuizLogo from '../../src/components/QuizLogo';
 import Button from '../../src/components/Button';
 import BackLinkArrow from '../../src/components/BackLinkArrow';
 import loadingAnimationData from '../../src/screens/animations/7774-loading.json';
+import PopUp from '../../src/components/PopUp';
 
-export function ResultWidget({ results }) {
+export function ResultWidget({ results, questionsDatas }) {
   return (
     <Widget>
-      <Widget.Header>Resultados:</Widget.Header>
-
+      <Widget.Header>
+        <BackLinkArrow href="/" />
+        Resultados:
+      </Widget.Header>
       <Widget.Content>
         <p>
           Você acertou
+          {' '}
           {results.filter((x) => x).length}
           {' '}
           questões
         </p>
         <ul>
-          {results.map((result, index) => (
-            <li key={`result__${result}`}>
-              Resultado #0
-              {index + 1}
-              :
-              {result === true ? 'Right' : 'Wrong'}
-            </li>
-          ))}
+          {results.map((result, index) => {
+            const { answer } = questionsDatas[index];
+
+            return (
+              <PopUp isAnswerCorrect={result} correctAnswer={answer} key={`result__${result}`}>
+                Questão
+                {' '}
+                {index}
+                :
+              </PopUp>
+            );
+          })}
         </ul>
       </Widget.Content>
     </Widget>
@@ -59,6 +67,12 @@ export function QuestionWidget({
   const questionId = `question__${questionIndex}`;
   const isCorrect = selectedAlternative === question.answer;
   const hasAlternativeSelected = selectedAlternative !== undefined;
+  const WarnPopUp = styled(PopUp)`
+    position: absolute;
+    width: 300px;
+    left: 37vw;
+    top: 90vh; 
+  `;
 
   return (
     <div>
@@ -122,8 +136,7 @@ export function QuestionWidget({
             <Button type="submit" disabled={!hasAlternativeSelected}>
               Confirmar
             </Button>
-            {isQuestionSubmitted && isCorrect && <p>you are right</p>}
-            {isQuestionSubmitted && !isCorrect && <p>you missed</p>}
+            {isQuestionSubmitted && <WarnPopUp isAnswerCorrect={isCorrect} correctAnswer={question.answer + 1} />}
           </AlternativesForm>
         </Widget.Content>
       </Widget>
@@ -197,7 +210,7 @@ export default function QuizPage() {
         {screenState === screenStates.LOADING && <LoadingWidget />}
 
         {screenState === screenStates.RESULT && (
-          <ResultWidget results={results} />
+          <ResultWidget results={results} questionsDatas={db.questions} />
         )}
       </QuizContainer>
     </QuizBackground>
