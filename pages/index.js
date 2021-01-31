@@ -28,9 +28,9 @@ export default function Home() {
       <Head>
         <title>Quiz nórdico</title>
         <link rel="shortcut icon" href="https://image.flaticon.com/icons/png/512/1377/1377698.png" />
-        <meta property="og:title" content="Norse Quiz" />
+        <meta property="og:title" content="Quiz Nórdico" />
         <meta property="og:image" content={db.metaImg} />
-        <meta property="og:description" content="Come make sure that you are ready for the Valhalla!" />
+        <meta property="og:description" content="Venha ver se você está pronto para o Valhalla!" />
       </Head>
       <QuizContainer>
         <QuizLogo />
