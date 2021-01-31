@@ -105,12 +105,13 @@ export function QuestionWidget({
                   htmlFor={alternativeId}
                   data-selected={isSelected}
                   data-status={isQuestionSubmitted && alternativeStatus}
+                  disabled={isQuestionSubmitted}
+                  onClick={() => !isQuestionSubmitted && setSelectedAlternative(alternativeIndex)}
                 >
                   <input
                     style={{ display: 'none' }}
                     id={alternativeId}
                     name={questionId}
-                    onChange={() => setSelectedAlternative(alternativeIndex)}
                     type="radio"
                   />
                   {alternative}
