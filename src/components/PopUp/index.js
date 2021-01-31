@@ -3,7 +3,7 @@ import Widget from '../Widget';
 
 const StyledWidgetTopic = styled(Widget.Topic)`
   background-color: ${({ theme, isAnswerCorrect }) => (isAnswerCorrect ? theme.colors.success : theme.colors.wrong)};
-  opacity: 0.5;
+  opacity: 2;
 `;
 
 export default function PopUp({

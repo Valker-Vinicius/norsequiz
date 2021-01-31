@@ -3,6 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Lottie from 'react-lottie';
+import { motion } from 'framer-motion';
 import db from '../../db.json';
 import Widget from '../../src/components/Widget';
 import AlternativesForm from '../../src/components/AlternativesForm';
@@ -67,12 +68,16 @@ export function QuestionWidget({
   const questionId = `question__${questionIndex}`;
   const isCorrect = selectedAlternative === question.answer;
   const hasAlternativeSelected = selectedAlternative !== undefined;
-  const WarnPopUp = styled(PopUp)`
-    position: absolute;
-    width: 300px;
-    left: 37vw;
-    top: 90vh; 
-  `;
+  const animationVariants = {
+    hidden: {
+      opacity: 0,
+	  y: '-50vh',
+    },
+    show: {
+      opacity: 1,
+	  y: ['-50vh', '50vh', '50vh', '50vh', '50vh', '0vh'],
+    },
+  };
 
   return (
     <div>
@@ -136,7 +141,20 @@ export function QuestionWidget({
             <Button type="submit" disabled={!hasAlternativeSelected}>
               Confirmar
             </Button>
-            {isQuestionSubmitted && <WarnPopUp isAnswerCorrect={isCorrect} correctAnswer={question.answer + 1} />}
+            {
+			  isQuestionSubmitted
+				  && (
+					<PopUp
+					style={{ position: 'absolute', width: '300px', left: '30vw', right: '30vw', }}
+  as={motion.div}
+  transition={{ delay: 0.5, duration: 2 }}
+  variants={animationVariants}
+  animate={isQuestionSubmitted ? 'show' : 'hidden'}
+  						isAnswerCorrect={isCorrect}
+  						correctAnswer={question.answer + 1}
+					/>
+				  )
+			}
           </AlternativesForm>
         </Widget.Content>
       </Widget>
