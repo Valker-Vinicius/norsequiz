@@ -57,7 +57,7 @@ export default function QuizPage({ externalQuestions, externalBg }) {
         {screenState === screenStates.LOADING && <LoadingWidget />}
 
         {screenState === screenStates.RESULT && (
-          <ResultWidget results={results} />
+          <ResultWidget results={results} questionsDatas={externalQuestions} />
         )}
       </QuizContainer>
     </QuizBackground>
