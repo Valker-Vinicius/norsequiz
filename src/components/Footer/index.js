@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const FooterWrapper = styled.footer`
   background-color: #00000070;
@@ -32,12 +32,12 @@ export default function Footer(props) {
         <img src="https://www.alura.com.br/assets/img/alura-logo-white.1570550707.svg" alt="Logo Alura" />
       </a>
       <p>
-        Proudly created during
+        Orgulhosamente criado durante
         {' '}
-        the
+        a
         {' '}
         <a href="https://www.alura.com.br/">
-          <span>Alura's Imersão React</span>
+          <span>Imersão React da Alura</span>
         </a>
       </p>
     </FooterWrapper>
