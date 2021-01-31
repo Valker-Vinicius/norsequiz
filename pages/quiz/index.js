@@ -145,7 +145,7 @@ export function QuestionWidget({
 			  isQuestionSubmitted
 				  && (
 					<PopUp
-					style={{ position: 'absolute', width: '300px', left: '30vw', right: '30vw', }}
+					style={{ position: 'absolute', width: '300px', left: '37vw' }}
   as={motion.div}
   transition={{ delay: 0.5, duration: 2 }}
   variants={animationVariants}
