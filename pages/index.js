@@ -93,7 +93,7 @@ export default function Home() {
                   <li key={externalLink}>
                     <Widget.Topic
                       as={Link}
-                      href={`/quiz/${projectName}___${githubUser}`}
+                      href={`${name.length === 0 ? '/' : `/quiz/${projectName}___${githubUser}`}`}
                       disabled={name.length === 0}
                     >
                       {`${githubUser}/${projectName}`}
