@@ -16,6 +16,12 @@ const Button = styled.button`
   &:hover {
 	  background-color: ${({ theme }) => theme.colors.primary};
   }
+
+  &:disabled {
+	border-color: #979797;
+    background-color: #979797;
+    cursor: not-allowed;
+  }
 `;
 
 Button.propTypes = {

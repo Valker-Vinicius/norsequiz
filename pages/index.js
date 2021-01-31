@@ -94,6 +94,7 @@ export default function Home() {
                     <Widget.Topic
                       as={Link}
                       href={`/quiz/${projectName}___${githubUser}`}
+                      disabled={name.length === 0}
                     >
                       {`${githubUser}/${projectName}`}
                     </Widget.Topic>
