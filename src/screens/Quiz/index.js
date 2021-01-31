@@ -2,6 +2,7 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 import styled from 'styled-components';
+import Lottie from 'react-lottie';
 import Widget from '../../components/Widget';
 import AlternativesForm from '../../components/AlternativesForm';
 import QuizBackground from '../../components/QuizBackground';
@@ -9,6 +10,7 @@ import QuizContainer from '../../components/QuizContainer';
 import QuizLogo from '../../components/QuizLogo';
 import Button from '../../components/Button';
 import BackLinkArrow from '../../components/BackLinkArrow';
+import loadingAnimationData from '../animations/7774-loading.json';
 
 function ResultWidget({ results }) {
   return (
@@ -64,7 +66,7 @@ function QuestionWidget({
       <QuizLogo />
       <Widget>
         <Widget.Header>
-		  <BackLinkArrow href="/" />
+          <BackLinkArrow href="/" />
           <h3>
             {`Question ${questionIndex + 1} of ${totalQuestions}`}
           </h3>
@@ -122,11 +124,6 @@ function QuestionWidget({
   </Widget.Topic>
 			  );
             })}
-
-            {/* <pre>
-              {JSON.stringify(question, null, 4)}
-			</pre> */}
-
             <Button type="submit" disabled={!hasAlternativeSelected}>
               Confirmar
             </Button>
@@ -140,14 +137,26 @@ function QuestionWidget({
 }
 
 function LoadingWidget() {
+  const loadingAnimationOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: loadingAnimationData,
+    rendererSettings: {
+	  preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
   return (
     <Widget>
       <Widget.Header>
-        Loading...
+        Carregando...
       </Widget.Header>
-
       <Widget.Content>
-        Challenge
+        <Lottie
+          options={loadingAnimationOptions}
+          width={200}
+          height={200}
+        />
       </Widget.Content>
     </Widget>
   );

@@ -2,6 +2,7 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 import styled from 'styled-components';
+import Lottie from 'react-lottie';
 import db from '../../db.json';
 import Widget from '../../src/components/Widget';
 import AlternativesForm from '../../src/components/AlternativesForm';
@@ -10,6 +11,7 @@ import QuizContainer from '../../src/components/QuizContainer';
 import QuizLogo from '../../src/components/QuizLogo';
 import Button from '../../src/components/Button';
 import BackLinkArrow from '../../src/components/BackLinkArrow';
+import loadingAnimationData from '../../src/screens/animations/7774-loading.json';
 
 function ResultWidget({ results }) {
   return (
@@ -137,14 +139,25 @@ function QuestionWidget({
 }
 
 function LoadingWidget() {
+  const loadingAnimationOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: loadingAnimationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
   return (
     <Widget>
       <Widget.Header>
         Carregando...
       </Widget.Header>
-
       <Widget.Content>
-        Desafio
+        <Lottie
+          options={loadingAnimationOptions}
+          width={200}
+          height={200}
+        />
       </Widget.Content>
     </Widget>
   );
