@@ -128,7 +128,7 @@ function QuestionWidget({
 			</pre> */}
 
             <Button type="submit" disabled={!hasAlternativeSelected}>
-              Confirm
+              Confirmar
             </Button>
             {isQuestionSubmitted && isCorrect && <p>you are right</p>}
             {isQuestionSubmitted && !isCorrect && <p>you missed</p>}

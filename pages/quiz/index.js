@@ -20,16 +20,16 @@ function ResultWidget({ results }) {
 
       <Widget.Content>
         <p>
-          You chose
+          Você acertou
           {' '}
           {results.filter((x) => x).length}
           {' '}
-          right alternatives
+          questões
         </p>
         <ul>
           {results.map((result, index) => (
             <li key={`result__${result}`}>
-              Result #0
+              Resultado #0
               {index + 1}
               :
               {' '}
@@ -65,7 +65,7 @@ function QuestionWidget({
       <QuizLogo />
       <Widget>
         <Widget.Header>
-		  <BackLinkArrow href="/" />
+          <BackLinkArrow href="/" />
           <h3>
             {`Question ${questionIndex + 1} of ${totalQuestions}`}
           </h3>
@@ -125,7 +125,7 @@ function QuestionWidget({
             })}
 
             <Button type="submit" disabled={!hasAlternativeSelected}>
-              Confirm
+              Confirmar
             </Button>
             {isQuestionSubmitted && isCorrect && <p>you are right</p>}
             {isQuestionSubmitted && !isCorrect && <p>you missed</p>}
@@ -140,11 +140,11 @@ function LoadingWidget() {
   return (
     <Widget>
       <Widget.Header>
-        Loading...
+        Carregando...
       </Widget.Header>
 
       <Widget.Content>
-        Challenge
+        Desafio
       </Widget.Content>
     </Widget>
   );
