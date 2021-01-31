@@ -95,6 +95,7 @@ export default function Home() {
                       as={Link}
                       href={`${name.length === 0 ? '/' : `/quiz/${projectName}___${githubUser}`}`}
                       disabled={name.length === 0}
+                      onClick={() => router.push(`${name.length === 0 ? '/' : `/quiz/${projectName}___${githubUser}`}?name=${name}`)}
                     >
                       {`${githubUser}/${projectName}`}
                     </Widget.Topic>

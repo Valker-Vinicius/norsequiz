@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable linebreak-style */
 import React from 'react';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Lottie from 'react-lottie';
 import { motion } from 'framer-motion';
@@ -16,11 +17,15 @@ import loadingAnimationData from '../../src/screens/animations/7774-loading.json
 import PopUp from '../../src/components/PopUp';
 
 export function ResultWidget({ results, questionsDatas }) {
+  const router = useRouter();
   return (
     <Widget>
       <Widget.Header>
         <BackLinkArrow href="/" />
-        Resultados:
+        Seus resultados,
+        {' '}
+        {router.query.name}
+        :
       </Widget.Header>
       <Widget.Content>
         <p>
@@ -145,7 +150,7 @@ export function QuestionWidget({
 			  isQuestionSubmitted
 				  && (
 					<PopUp
-					style={{ position: 'absolute', width: '300px', left: '37vw' }}
+  style={{ position: 'absolute', width: '300px', left: '37vw' }}
   as={motion.div}
   transition={{ delay: 0.5, duration: 2 }}
   variants={animationVariants}
