@@ -93,9 +93,8 @@ export default function Home() {
                   <li key={externalLink}>
                     <Widget.Topic
                       as={Link}
-                      href={`${name.length === 0 ? '/' : `/quiz/${projectName}___${githubUser}`}`}
+                      href={`${name.length === 0 ? '/' : `/quiz/${projectName}___${githubUser}`}?name=${name}`}
                       disabled={name.length === 0}
-                      onClick={() => router.push(`${name.length === 0 ? '/' : `/quiz/${projectName}___${githubUser}`}?name=${name}`)}
                     >
                       {`${githubUser}/${projectName}`}
                     </Widget.Topic>
